@@ -9,7 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
-public class LeftPaneView extends HBox {
+public class LeftPaneView extends VBox {
 	private TextField weightField,taraField;
 	private Button stableBtn,taraBtn,printBtn,cancelLastPrint;
 	private VBox scaleBox,stableBox,emptyBox,taraBox,currentMeasureBox,printBox;
@@ -22,7 +22,6 @@ public class LeftPaneView extends HBox {
 		double height = this.primaryScreenBounds.getHeight();
 		System.out.println(scaleBoxHeight(height));
 		
-		VBox wreperBox = new VBox();	
 		
 		 scaleBox = new VBox();
 				Label scaleLbl = new Label("Weight in kilograms");
@@ -81,12 +80,11 @@ public class LeftPaneView extends HBox {
 			
 			VBox.setVgrow(printBox, Priority.ALWAYS);
 				
-		wreperBox.getChildren().addAll(scaleBox,stableBox,emptyBox,taraBox,currentMeasureBox,printBox);
-		wreperBox.setId("left-pane");
-	
+		
+		this.setId("left-pane-body");
 		this.getStylesheets().add("css/left-pane.css");
-		this.getChildren().addAll(wreperBox);
-		this.setPrefSize(containerWidth(width), height);
+		this.getChildren().addAll(scaleBox,stableBox,emptyBox,taraBox,currentMeasureBox,printBox);
+		this.setPrefSize(containerWidth(width)+20, height);
 	}
 	
 	//Main container width

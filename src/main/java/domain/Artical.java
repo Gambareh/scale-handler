@@ -20,6 +20,9 @@ public class Artical {
 	@Column
 	private boolean isActive;
 	@OneToOne()
+	@JoinColumn(name = "group_id", referencedColumnName = "id")
+	private Group group;
+	@OneToOne()
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 	

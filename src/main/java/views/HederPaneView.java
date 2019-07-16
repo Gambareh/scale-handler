@@ -17,30 +17,17 @@ public class HederPaneView extends VBox {
 		
 		VBox wrepBox = new VBox();
 			
-			HBox usernameBox = new HBox();
-				Label usernameLbl = new Label("Your username: ");
-				usernameField = new TextField();
-			usernameBox.getChildren().addAll(usernameLbl,usernameField);
-			
-			HBox passwordBox = new HBox();
-				Label passwordLbl = new Label("Your password: ");
-				passwordField = new TextField();
-			passwordBox.getChildren().addAll(passwordLbl,passwordField);
-			
-		wrepBox.getChildren().addAll(usernameBox,passwordBox);
-			
-			VBox loginBtnBox = new VBox();
-				logInBtn = new Button("Login");
-				logInBtn.setId("login-button");
-			loginBtnBox.getChildren().addAll(logInBtn);
-			loginBtnBox.setId("login-btn-box");
-			
-		
+			HBox groupBox = new HBox();
+				Label usernameLbl = new Label("Choose group of articals");
+			groupBox.getChildren().addAll(usernameLbl);
+
+		wrepBox.getChildren().addAll(groupBox);
+
 		Line line = new Line(10, 0, 1000, 0);
 		line.setId("line");
 		
 		this.setId("heder-pane");
-		this.getChildren().addAll(wrepBox,loginBtnBox,line);
+		this.getChildren().addAll(wrepBox,line);
 		this.getStylesheets().add("css/heder-pane.css");
 	
 	}
