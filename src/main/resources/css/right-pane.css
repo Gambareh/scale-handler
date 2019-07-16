@@ -1,0 +1,16 @@
+#right-pane{
+	-fx-border-style:solid;
+	-fx-padding:5px;
+
+}
+
+.button{
+	-fx-pref-width:200px;
+	-fx-pref-height:100px;
+	-fx-font-size:14px;
+}
+#wreapPane{
+	-fx-hgap: 5;
+  -fx-vgap: 5;
+  -fx-alignment:center;
+}

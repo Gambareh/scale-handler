@@ -1,0 +1,81 @@
+#left-pane{
+	-fx-padding:5px,5px,10px,5px;
+	-fx-spacing:10px;
+	-fx-border-style:solid;
+}
+
+.label{
+	-fx-font-size:14px;
+}
+
+#scaleBox{
+	-fx-spacing:5px;
+	-fx-padding:5px;
+}
+
+#scaleBox .text-field{
+	-fx-spacing:5px;
+	-fx-padding:5px;
+	
+}
+
+#scaleBox {
+	-fx-font-size:14px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
+	-fx-background-color:#fff;
+	-fx-alignment:center;
+}
+#unstableBtn{
+	-fx-font-size:14px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
+	-fx-background-color:#ff7146;
+}
+
+#stableBtn{
+	-fx-font-size:14px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
+	-fx-background-color:#a6ff52;
+}
+#emptyBox{
+	
+}
+#taraBox{
+	-fx-font-size:14px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
+	-fx-background-color:#fff;
+	-fx-alignment:center;
+	-fx-spacing:10px;
+}
+#taraBox .button{
+	-fx-background-color:#d4c4a3;
+	-fx-padding:0,10,10,0;
+}
+
+#currentBox{
+	-fx-background-color:white;
+	
+	-fx-alignment:center;
+	-fx-spacing:10px;
+	
+}
+#currentBox .label{
+	-fx-font-size:16px;
+}
+#printBox{
+	-fx-spacing:5px;
+	-fx-padding:10px;
+	-fx-alignment:bottom-center;	
+	-fx-font-size:18px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
+	-fx-background-color:#fff;
+	-fx-alignment:center;
+}
+
+
+
+
