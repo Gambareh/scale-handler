@@ -2,8 +2,10 @@ package domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -13,19 +15,23 @@ public class Artical {
 	
 	@Id
 	private long code;
+	
 	@Column
 	private String name;
+	
 	@Column
 	private String display_name;
+	
 	@Column
 	private boolean isActive;
-	@OneToOne()
-	@JoinColumn(name = "group_id", referencedColumnName = "id")
-	private Group group;
-	@OneToOne()
+	
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "group_id")
+	private Groups groups;
 	
 	public Artical () {
 		// TODO Auto-generated constructor stub
@@ -65,14 +71,7 @@ public class Artical {
 	}
 	
 	
-	public Group getGroup() {
-		return group;
-	}
 	
-	
-	public void setGroup(Group group) {
-		this.group = group;
-	}
 	
 	
 }

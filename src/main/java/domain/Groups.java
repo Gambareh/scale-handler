@@ -1,12 +1,21 @@
 package domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Group {
-	
+@Entity
+@Table(name="groups")
+public class Groups {
+	@Id
 	private int group_id;
+	
+	@Column(name = "group_name")
 	private String groupName;
+	
 
-	public Group () {
+	public Groups () {
 		// TODO Auto-generated constructor stub
 	}
 

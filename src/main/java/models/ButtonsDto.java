@@ -13,7 +13,7 @@ public class ButtonsDto {
 		
 		public List<Buttons> getArticalButtons(List<Artical> articals) {
 			List<Buttons> btns = new ArrayList<Buttons>();
-			
+			if(articals!=null) {
 			for(Artical artical : articals) {
 				Buttons bt = new Buttons.ButtonBuilder(String.valueOf(artical.getCode()))
 						.showDispName(artical.getDisplay_name())
@@ -25,6 +25,7 @@ public class ButtonsDto {
 				
 				btns.add(bt);
 						
+			}
 			}
 			return btns;
 		}

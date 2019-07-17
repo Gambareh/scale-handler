@@ -20,9 +20,7 @@ public class User {
 	private String last_name;
 	@Column
 	private boolean isActive;
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id")
-	private User user;
+	
 	
 	
 	public User () {

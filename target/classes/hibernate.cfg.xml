@@ -8,7 +8,7 @@
       		org.hibernate.dialect.MySQLDialect
    		</property>
    		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
-   		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>  		
+   		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>  		
    		<property name="hibernate.connection.url">
       		jdbc:mysql://localhost:3306/trade
    		</property> 		
@@ -19,6 +19,7 @@
   	  <property name="hibernate.hbm2ddl.auto">update</property>
   	   
       <mapping class="domain.Artical"/>
-      <mapping class="domain.User"/>   
+      <mapping class="domain.User"/>
+      <mapping class="domain.Groups"/>     
    </session-factory>
 </hibernate-configuration>
