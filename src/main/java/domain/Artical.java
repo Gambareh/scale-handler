@@ -27,7 +27,7 @@ public class Artical {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
-	private User user;
+	private Users user;
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "group_id")

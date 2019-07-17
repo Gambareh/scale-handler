@@ -2,14 +2,14 @@ package models;
 
 import java.util.List;
 
-import domain.User;
+import domain.Users;
 
 public interface UserData {
 	
-	User getUser(long id);
-	List<User> getAllUsers();
-	void save(User user);
-	void update(User user);
-	void delete(User user);
+	Users getUser(long id);
+	List<Users> getAllUsers();
+	void save(Users user);
+	void update(Users user);
+	void delete(Users user);
 	
 }

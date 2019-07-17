@@ -2,17 +2,15 @@ package domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "users")
+public class Users {
 	
 	@Id
+	@Column(name = "id")
 	private long id;
 	@Column
 	private String first_name;
@@ -23,7 +21,7 @@ public class User {
 	
 	
 	
-	public User () {
+	public Users () {
 		// TODO Auto-generated constructor stub
 	}
 
