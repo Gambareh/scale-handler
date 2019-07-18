@@ -38,21 +38,21 @@ public class ArticalDataModel implements ArticalData {
 	}
 
 	@Override
-	public long save(long id) {
+	public void save(Artical artical) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = null;
 		long tmp = 0L;
 		
 		try {
 			 tx = session.beginTransaction();
-			 tmp = (long) session.save(id);
+			 tmp = (long) session.save(artical);
 			 tx.commit();
 		} catch (Exception e) {
 				if(tx!=null){
 					tx.rollback();
 				}
 		}finally {session.close();}	
-		return tmp;	
+		
 	}
 
 	@Override

@@ -69,6 +69,22 @@ public class Artical {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
+	public Groups getGroups() {
+		return groups;
+	}
+
+	public void setGroups(Groups groups) {
+		this.groups = groups;
+	}
 	
 	
 	
