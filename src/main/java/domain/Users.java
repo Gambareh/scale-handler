@@ -16,7 +16,7 @@ public class Users {
 	private String first_name;
 	@Column
 	private String last_name;
-	@Column
+	@Column(name="is_active")
 	private boolean isActive;
 	
 	

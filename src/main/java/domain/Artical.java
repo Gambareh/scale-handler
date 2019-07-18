@@ -22,7 +22,7 @@ public class Artical {
 	@Column
 	private String display_name;
 	
-	@Column
+	@Column(name = "is_active")
 	private boolean isActive;
 	
 	@OneToOne(fetch = FetchType.LAZY)
