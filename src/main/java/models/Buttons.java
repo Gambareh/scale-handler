@@ -1,53 +1,23 @@
 package models;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.scene.control.Button;
 
 public class Buttons extends Button{
 	
 	private String buttonCode,displayName,fullName;
 	private boolean isActive;
-  
-	
-	//Builder class
-	public static class ButtonBuilder{
+ 
+	public Buttons () {
 		
-		private String buttonCode,displayName,name;
-		private boolean isActive;
-	
-		public ButtonBuilder (String code) {
-		this.buttonCode = code;
-		}
-		
-		public ButtonBuilder showDispName(String dispName) {
-			this.displayName = dispName;
-			return this;
-		}
-		
-		public ButtonBuilder showFullName(String fullName) {
-			this.name = fullName;
-			return this;
-		}
-		
-		public ButtonBuilder isActive(boolean isActive) {
-			this.isActive = isActive;
-			return this;
-		}
-		
-		public Buttons build() {
-			Buttons btn = new Buttons();
-			btn.setButtonCode(this.buttonCode);
-			btn.setDisplayName(this.displayName);
-			btn.setFullName(this.name);
-			btn.setActive(this.isActive);
-			return btn;
+		setOnAction((ActionEvent e) -> {
 			
-		}
-	
-	}
-	
-	private Buttons () {
+		});
 		
 	}
+	
 	
 	public String getButtonCode() {
 		return buttonCode;
@@ -89,7 +59,5 @@ public class Buttons extends Button{
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-	
-	
 	
 }

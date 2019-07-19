@@ -44,7 +44,7 @@ public class Main extends Application{
 		
 		CenterPaneView centerPaneView = new CenterPaneView();
 		CenterPaneController centerPaneController = 
-				new CenterPaneController(centerPaneView, dataModel,primaryScreenBounds);
+				new CenterPaneController(centerPaneView,leftPaneView,dataModel,primaryScreenBounds);
 		
 		RightPaneView rightPaneView = new RightPaneView();
 		RightPaneController rightPaneController = 

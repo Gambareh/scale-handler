@@ -14,6 +14,7 @@ public class LeftPaneView extends VBox {
 	private Button stableBtn,taraBtn,printBtn,cancelLastPrint;
 	private VBox scaleBox,stableBox,emptyBox,taraBox,currentMeasureBox,printBox;
 	private Rectangle2D primaryScreenBounds;
+	private Label articalName,articalWeight;
 	
 	
 	public LeftPaneView (Rectangle2D primaryScreenBounds) {
@@ -56,9 +57,9 @@ public class LeftPaneView extends VBox {
 			
 		 currentMeasureBox = new VBox();
 				Label currentArtical = new Label("Current Artical");
-				Label articalName = new Label("--------");
+				articalName = new Label("--------");
 				Label currentWeight = new Label("Current Weight");
-				Label articalWeight = new Label("--------");
+				articalWeight = new Label("--------");
 				
 		 currentMeasureBox.getChildren().addAll(currentArtical,articalName,currentWeight,articalWeight);
 		 currentMeasureBox.setId("currentBox");
@@ -207,5 +208,23 @@ public class LeftPaneView extends VBox {
 	}
 	
 	
+	public Label getArticalName() {
+		return articalName;
+	}
+	
+	
+	public void setArticalName(Label articalName) {
+		this.articalName = articalName;
+	}
+	
+	
+	public Label getArticalWeight() {
+		return articalWeight;
+	}
+	
+	
+	public void setArticalWeight(Label articalWeight) {
+		this.articalWeight = articalWeight;
+	}
 	
 }
