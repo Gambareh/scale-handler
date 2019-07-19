@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
-import controllers.HederPaneController;
+
 import controllers.LeftPaneController;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -31,8 +31,8 @@ public class MainTest extends ApplicationTest{
 		LeftPaneView leftPaneView = new LeftPaneView(primaryScreenBounds);
 		LeftPaneController controller = new LeftPaneController(leftPaneView,primaryScreenBounds);
 		
-		HederPaneView hederPaneView = new HederPaneView();
-		HederPaneController hederPaneController = new HederPaneController(hederPaneView,primaryScreenBounds);
+		HederPaneView hederPaneView = new HederPaneView(primaryScreenBounds);
+	
 		
 		root.setTop(hederPaneView);
 		root.setLeft(leftPaneView);

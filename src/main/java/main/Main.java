@@ -1,6 +1,6 @@
 package main;
 
-import controllers.HederPaneController;
+
 import controllers.LeftPaneController;
 import controllers.RightPaneController;
 import controllers.CenterPaneController;
@@ -35,20 +35,19 @@ public class Main extends Application{
 		ArticalDataModel dataModel = new ArticalDataModel();
 		
 		LeftPaneView leftPaneView = new LeftPaneView(primaryScreenBounds);
-		LeftPaneController leftPaneController = 
-				new LeftPaneController(leftPaneView,primaryScreenBounds);
-		
-		HederPaneView hederPaneView = new HederPaneView();
-		HederPaneController hederPaneController = 
-				new HederPaneController(hederPaneView,primaryScreenBounds);
-		
+		HederPaneView hederPaneView = new HederPaneView(primaryScreenBounds);
 		CenterPaneView centerPaneView = new CenterPaneView();
-		CenterPaneController centerPaneController = 
-				new CenterPaneController(centerPaneView,leftPaneView,dataModel,primaryScreenBounds);
-		
 		RightPaneView rightPaneView = new RightPaneView();
-		RightPaneController rightPaneController = 
-				new RightPaneController(rightPaneView,primaryScreenBounds);
+	
+		
+		CenterPaneController centerPaneController = new CenterPaneController(
+				leftPaneView,
+				hederPaneView,
+				centerPaneView,
+				rightPaneView,
+				dataModel,
+				primaryScreenBounds);
+		
 		
 		root.setTop(hederPaneView);
 		root.setLeft(leftPaneView);

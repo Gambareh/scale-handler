@@ -10,12 +10,12 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import views.LeftPaneView;
 
-public class ButtonsDto{
+public class ArticalButtonsDto{
 	
 		private LeftPaneView leftPaneView;
-		private Buttons bt;
+		private ArticalButtons bt;
 		
-		public ButtonsDto (LeftPaneView leftPaneView) {
+		public ArticalButtonsDto (LeftPaneView leftPaneView) {
 			this.leftPaneView = leftPaneView;
 			
 		}
@@ -24,12 +24,12 @@ public class ButtonsDto{
 		 * @param List<Artical> 
 		 * @return List<Buttons>
 		 */
-		public List<Buttons> getArticalButtons(List<Artical> articals) {
-			List<Buttons> btns = new ArrayList<Buttons>();
+		public List<ArticalButtons> getArticalButtons(List<Artical> articals) {
+			List<ArticalButtons> btns = new ArrayList<ArticalButtons>();
 			if(articals!=null) {
 			for(Artical artical : articals) {
 				
-				bt = new Buttons();
+				bt = new ArticalButtons();
 				bt.setButtonCode(String.valueOf(artical.getCode()));
 				bt.setDisplayName(artical.getDisplay_name());
 				bt.setFullName(artical.getName());
@@ -43,7 +43,7 @@ public class ButtonsDto{
 		}
 		
 		public void buttonEventPressed(ActionEvent event) {
-			Buttons button = (Buttons) event.getSource();
+			ArticalButtons button = (ArticalButtons) event.getSource();
 			System.out.println(button.getButtonCode());
 		}
 	
@@ -51,7 +51,7 @@ public class ButtonsDto{
 
 			@Override
 			public void handle(ActionEvent event) {
-				Buttons tmp = (Buttons) event.getSource();
+				ArticalButtons tmp = (ArticalButtons) event.getSource();
 				Label lblName = leftPaneView.getArticalName();
 				Label lblCode = leftPaneView.getArticalCode();
 				lblName.setText(tmp.getDisplayName());

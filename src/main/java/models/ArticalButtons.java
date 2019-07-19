@@ -5,17 +5,13 @@ import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.control.Button;
 
-public class Buttons extends Button{
+public class ArticalButtons extends Button{
 	
 	private String buttonCode,displayName,fullName;
 	private boolean isActive;
  
-	public Buttons () {
-		
-		setOnAction((ActionEvent e) -> {
-			
-		});
-		
+	public ArticalButtons () {
+	
 	}
 	
 	
