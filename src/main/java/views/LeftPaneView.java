@@ -14,7 +14,7 @@ public class LeftPaneView extends VBox {
 	private Button stableBtn,taraBtn,printBtn,cancelLastPrint;
 	private VBox scaleBox,stableBox,emptyBox,taraBox,currentMeasureBox,printBox;
 	private Rectangle2D primaryScreenBounds;
-	private Label articalName,articalWeight;
+	private Label articalName,articalCode;
 	
 	
 	public LeftPaneView (Rectangle2D primaryScreenBounds) {
@@ -26,7 +26,7 @@ public class LeftPaneView extends VBox {
 		
 		 scaleBox = new VBox();
 				Label scaleLbl = new Label("Weight in kilograms");
-				weightField = new TextField();
+				weightField = new TextField("100.00");
 				weightField.setId("weightFld");
 				weightField.setEditable(false);
 				weightField.setPrefSize(containerWidth(width), 60);
@@ -58,10 +58,12 @@ public class LeftPaneView extends VBox {
 		 currentMeasureBox = new VBox();
 				Label currentArtical = new Label("Current Artical");
 				articalName = new Label("--------");
-				Label currentWeight = new Label("Current Weight");
-				articalWeight = new Label("--------");
+				articalName.setId("dispLblArticals");
+				Label currentWeight = new Label("Artical Code");
+				articalCode = new Label("--------");
+				articalCode.setId("dispLblArticals");
 				
-		 currentMeasureBox.getChildren().addAll(currentArtical,articalName,currentWeight,articalWeight);
+		 currentMeasureBox.getChildren().addAll(currentArtical,articalName,currentWeight,articalCode);
 		 currentMeasureBox.setId("currentBox");
 		 currentMeasureBox.setPrefSize(containerWidth(width), measureBoxHeight(height));
 		
@@ -218,13 +220,13 @@ public class LeftPaneView extends VBox {
 	}
 	
 	
-	public Label getArticalWeight() {
-		return articalWeight;
+	public Label getArticalCode() {
+		return articalCode;
 	}
 	
 	
-	public void setArticalWeight(Label articalWeight) {
-		this.articalWeight = articalWeight;
+	public void setArticalCode(Label articalCode) {
+		this.articalCode = articalCode;
 	}
 	
 }

@@ -20,6 +20,10 @@
 
 #scaleBox .text-field{
 	-fx-spacing:5px;
+	-fx-alignment:center;
+	-fx-font-size:25px;
+	-fx-text-fill:black;
+	-fx-font-weight:bold;
 }
 
 
@@ -48,6 +52,9 @@
 	-fx-spacing:10px;
 
 }
+#taraBox .text-field{
+	-fx-alignment:center;
+}
 #taraBox .button{
 	-fx-background-color:#d4c4a3;
 	-fx-padding:0,10,10,0;
@@ -61,6 +68,11 @@
 }
 #currentBox .label{
 	-fx-font-size:16px;
+}
+
+#dispLblArticals{
+	-fx-font-size:20px;
+	-fx-font-weight:bold;
 }
 #printBox{
 	-fx-spacing:5px;
