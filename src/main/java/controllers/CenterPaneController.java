@@ -2,9 +2,17 @@ package controllers;
 
 import java.util.List;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import models.ArticalDataModel;
+import models.GroupButtons;
+import models.GroupButtonsDto;
+import models.GroupDataModel;
 import models.ArticalButtons;
 import models.ArticalButtonsDto;
 import views.CenterPaneView;
@@ -37,15 +45,75 @@ public class CenterPaneController  {
 		this.rightPaneView = rightPaneView;
 		this.hederPaneView = hederPaneView; 
 		
-		ArticalButtonsDto buttonsDto = new ArticalButtonsDto(this.leftPaneView);
+		double width = primaryScreenBounds.getWidth();
+		double height = primaryScreenBounds.getHeight();
 		
+		GroupDataModel groupDataModel = new GroupDataModel();
+		
+		ArticalButtonsDto buttonsDto = new ArticalButtonsDto(this.leftPaneView);
+		GroupButtonsDto groupButtonsDto = new GroupButtonsDto();
+		groupButtonsDto.setEvent(groupEvent());
+		
+		//center-pane
 		FlowPane wreap = this.centerView.getWrapPane();
 		List<ArticalButtons> buttons = buttonsDto.getArticalButtons(this.dataModel.getAllArtical());
 		wreap.getChildren().addAll(buttons);
 		
+		//heder-pane 
+		VBox scrollPane = this.hederPaneView.getGroupBoxScroll();
+		scrollPane.setPrefSize(width, scrollBoxHeight(height));
+		
+		List<GroupButtons> groupButtons = groupButtonsDto.getGroupButtons(groupDataModel.getAllGroups());
+		
+		FlowPane scrolFPane = scrollFlowPane();
+		scrolFPane.getChildren().addAll(groupButtons);
+		scrolFPane.prefWidthProperty().bind(scrollPane.widthProperty());
+		
+		ScrollPane pane = scrollPane();
+		pane.setContent(scrolFPane);
+		
+		scrollPane.getChildren().addAll(pane);
+		
+		
 		
 		
 	}
+	private EventHandler<ActionEvent> groupEvent(){
+	EventHandler<ActionEvent> groupEvent = new EventHandler<ActionEvent>() {
+
+		@Override
+		public void handle(ActionEvent event) {
+			System.out.println("Hello group");
+		}
+	};
+	return groupEvent;
+	};
+	
+	
+	/*
+	 * This is flow pane witch fit into 
+	 * scroll pane 
+	 */
+	private FlowPane scrollFlowPane() {
+		FlowPane flowPane = new FlowPane();
+		flowPane.setVgap(5);
+		flowPane.setHgap(5);
+		return flowPane;
+	}
+	
+	/*
+	 * Scroll pane for group btns.
+	 */
+	private ScrollPane scrollPane() {
+		ScrollPane pane = new ScrollPane();
+		return pane;
+		
+	}
+	
+	private Double scrollBoxHeight(double height) {
+		return height*((double)30/100);
+	}
+	
 	
 	public ArticalDataModel getDataModel() {
 		return dataModel;

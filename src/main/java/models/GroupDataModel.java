@@ -32,8 +32,10 @@ public class GroupDataModel implements GroupData{
 
 	@Override
 	public List<Groups> getAllGroups() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();	
+		List<Groups> list = session.createCriteria(Groups.class).list();
+		session.close();
+		return list;
 	}
 
 	@Override

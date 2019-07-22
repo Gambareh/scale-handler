@@ -44,7 +44,7 @@ public class RightPaneView extends VBox {
 			@Override
 			public void handle(ActionEvent event) {
 				Groups groups = new Groups();
-				groups.setGroupName("Fruits");
+				groups.setGroupName("Sweets");
 				GroupDataModel ggg = new GroupDataModel();
 				ggg.save(groups);
 				

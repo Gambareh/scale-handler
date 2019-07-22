@@ -1,4 +1,4 @@
-#heder-pane{
+#heder-pane {
 	-fx-padding:5px;
 	-fx-spacing:5px;
 }
@@ -9,19 +9,4 @@
 	-fx-pref-width:250px;
 	-fx-pref-height:30px;
 }
-.button{
-	-fx-pref-width:200px;
-	-fx-pref-height:30px;
-	-fx-font-size:14px;
-}
-#login-button{
-	-fx-alignment:center;
-	-fx-pref-width:200px;
-	-fx-pref-height:30px;
-}
-#login-btn-box{
-	-fx-alignment:left;
-}
-#line{
-	
-}
+

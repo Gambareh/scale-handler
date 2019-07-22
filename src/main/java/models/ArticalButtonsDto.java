@@ -13,7 +13,7 @@ import views.LeftPaneView;
 public class ArticalButtonsDto{
 	
 		private LeftPaneView leftPaneView;
-		private ArticalButtons bt;
+		
 		
 		public ArticalButtonsDto (LeftPaneView leftPaneView) {
 			this.leftPaneView = leftPaneView;
@@ -29,12 +29,12 @@ public class ArticalButtonsDto{
 			if(articals!=null) {
 			for(Artical artical : articals) {
 				
-				bt = new ArticalButtons();
-				bt.setButtonCode(String.valueOf(artical.getCode()));
-				bt.setDisplayName(artical.getDisplay_name());
-				bt.setFullName(artical.getName());
-				bt.setActive(artical.isActive());
-				bt.addEventHandler(ActionEvent.ACTION, event);		
+				ArticalButtons bt = new ArticalButtons();
+					bt.setButtonCode(String.valueOf(artical.getCode()));
+					bt.setDisplayName(artical.getDisplay_name());
+					bt.setFullName(artical.getName());
+					bt.setActive(artical.isActive());
+					//bt.addEventHandler(ActionEvent.ACTION, event);		
 				btns.add(bt);
 						
 			}			

@@ -16,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
 public class HederPaneView extends VBox {
-	private TextField usernameField,passwordField;
+	private TextField usernameField;
 	private Button logInBtn;
 	private VBox groupBoxScroll;
 	
@@ -33,31 +33,17 @@ public class HederPaneView extends VBox {
 			groupBox.getChildren().addAll(usernameLbl);
 			
 		  groupBoxScroll = new VBox();
-				ScrollPane pane = new ScrollPane();
-				FlowPane buttonPane = new FlowPane();
 				
-				System.out.println();
-				List<Button>buttons = new ArrayList<Button>();
-				for(int i = 0; i<30;i++) { 
-					Button tmp = new Button("Group 1");
-					
-					buttons.add(tmp);			 
-				}
-				for(Button b:buttons) {
-					b.setPrefSize(200,100);
-				
-				}
-				
-				buttonPane.getChildren().addAll(buttons);		
-				buttonPane.setPrefWidth(width);
-				buttonPane.setHgap(5);
-				buttonPane.setVgap(5);
-				buttonPane.setStyle("-fx-border-style:solid");
-				pane.setContent(buttonPane);
-				pane.setPrefWidth(width);
-				pane.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-				pane.setHbarPolicy(ScrollBarPolicy.NEVER);
-			groupBoxScroll.getChildren().add(pane);
+//				buttonPane.getChildren().addAll(buttons);		
+//				buttonPane.setPrefWidth(width);
+//				buttonPane.setHgap(5);
+//				buttonPane.setVgap(5);
+//				buttonPane.setStyle("-fx-border-style:solid");
+//				pane.setContent(buttonPane);
+//				pane.setPrefWidth(width);
+//				pane.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+//				pane.setHbarPolicy(ScrollBarPolicy.NEVER);
+//			groupBoxScroll.getChildren().add(pane);
 			groupBoxScroll.setPrefWidth(width);
 			groupBoxScroll.setMaxHeight(scrollBoxHeight(height));
 			groupBoxScroll.setPrefHeight(scrollPrefBoxHeight(height));
