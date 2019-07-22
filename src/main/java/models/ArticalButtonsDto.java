@@ -42,11 +42,6 @@ public class ArticalButtonsDto{
 			return btns;
 		}
 		
-		public void buttonEventPressed(ActionEvent event) {
-			ArticalButtons button = (ArticalButtons) event.getSource();
-			System.out.println(button.getButtonCode());
-		}
-	
 		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 
 			@Override

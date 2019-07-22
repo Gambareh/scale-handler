@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import models.ArticalDataModel;
 import models.HibernateInit;
 import views.HederPaneView;
@@ -59,7 +60,10 @@ public class Main extends Application{
 		Scene scene = new Scene(root,1024,780);
 		scene.getStylesheets().add("css/application.css");
 		primStage.setScene(scene);
+		primStage.setFullScreen(true);
+		primStage.initStyle(StageStyle.UNDECORATED);
 		primStage.show();
+		
 		
 	}
 	
