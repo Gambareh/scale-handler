@@ -6,10 +6,10 @@ import javafx.scene.layout.VBox;
 
 
 public class CenterPaneView extends VBox{
-	private FlowPane wrapPane;
+	private VBox wrapPane;
 
 	public CenterPaneView () {
-		wrapPane = new FlowPane();
+		wrapPane = new VBox();
 		wrapPane.setId("wreapPane");
 		this.setId("right-pane");
 		this.getChildren().addAll(wrapPane);
@@ -18,11 +18,11 @@ public class CenterPaneView extends VBox{
 
 
 	
-	public FlowPane getWrapPane() {
+	public VBox getWrapPane() {
 		return wrapPane;
 	}
 
-	public void setWrapPane(FlowPane wrapPane) {
+	public void setWrapPane(VBox wrapPane) {
 		this.wrapPane = wrapPane;
 	}
 	

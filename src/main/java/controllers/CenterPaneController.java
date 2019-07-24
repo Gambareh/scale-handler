@@ -2,14 +2,18 @@ package controllers;
 
 import java.util.List;
 
+import domain.Artical;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Pagination;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import models.ArticalDataModel;
 import models.GroupButtons;
 import models.GroupButtonsDto;
@@ -28,14 +32,12 @@ public class CenterPaneController  {
 	private LeftPaneView leftPaneView;
 	private HederPaneView hederPaneView;
 	private ArticalDataModel articalDataModel;
-	private RightPaneView rightPaneView;
 	private Rectangle2D primaryScreenBounds;
 	
 	public CenterPaneController ( 
 			LeftPaneView leftPaneView,
 			HederPaneView hederPaneView,
 			CenterPaneView centerView,	
-			RightPaneView rightPaneView,
 			ArticalDataModel articalDataModel,
 			Rectangle2D primaryScreenBounds) {
 		
@@ -43,7 +45,6 @@ public class CenterPaneController  {
 		this.centerView = centerView;
 		this.primaryScreenBounds=primaryScreenBounds;
 		this.leftPaneView =leftPaneView;
-		this.rightPaneView = rightPaneView;
 		this.hederPaneView = hederPaneView; 
 		
 		double width = primaryScreenBounds.getWidth();
@@ -56,9 +57,23 @@ public class CenterPaneController  {
 		groupButtonsDto.setEvent(groupEvent());
 		
 		//center-pane
-		FlowPane wreap = this.centerView.getWrapPane();
+		int pageIndex =0;
 		List<ArticalButtons> buttons = buttonsDto.getArticalButtons(this.dataModel.getAllArtical());
-		wreap.getChildren().addAll(buttons);
+		Pagination articalPagination = new Pagination();
+		articalPagination.setPageCount(2);
+		articalPagination.setPrefHeight(paginBoxHeight(height));
+		articalPagination.setPageFactory(new Callback<Integer, Node>() {
+			
+			@Override
+			public Node call(Integer pageIndex) {
+			
+      	return createPage(buttons,pageIndex);
+      
+				
+			}
+		});
+		VBox wrap =this.centerView.getWrapPane();
+		wrap.getChildren().add(articalPagination);
 		
 		//heder-pane 
 		VBox scrollPane = this.hederPaneView.getGroupBoxScroll();
@@ -75,11 +90,6 @@ public class CenterPaneController  {
 		
 		scrollPane.getChildren().addAll(pane);
 		
-		//right pane view
-		Button exitBtn = rightPaneView.getExitBtn();
-		exitBtn.addEventHandler(ActionEvent.ACTION,  exitBtnEvent());
-		
-		
 	}
 	
 	private EventHandler<ActionEvent> groupEvent(){
@@ -91,18 +101,7 @@ public class CenterPaneController  {
 			}
 		};
 		return groupEvent;
-		};
-	
-	private EventHandler<ActionEvent> exitBtnEvent(){
-		EventHandler<ActionEvent> groupEvent = new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent event) {
-				System.exit(0);
-			}
-		};
-		return groupEvent;
-		};
+	};
 	
 	
 	/*
@@ -113,7 +112,26 @@ public class CenterPaneController  {
 		FlowPane flowPane = new FlowPane();
 		flowPane.setVgap(5);
 		flowPane.setHgap(5);
-		return flowPane;
+		return flowPane; 
+	}
+	
+	 private int itemsPerPage() {
+     return 1;
+ }
+	
+	private FlowPane createPage(List<ArticalButtons> listaArtikla,int pageIndex) {
+		System.out.println("Create okinava");
+		int page = pageIndex * itemsPerPage();
+		FlowPane wreap = new FlowPane();
+		for(int i=page;i<(pageIndex+1)*itemsPerPage();i++) {
+			System.out.println(i);
+			if(i<=listaArtikla.size()) {
+			ArticalButtons articalButtons = listaArtikla.get(i);
+			wreap.getChildren().addAll(articalButtons);
+			}
+		}
+		return wreap;
+		
 	}
 	
 	/*
@@ -129,6 +147,9 @@ public class CenterPaneController  {
 		return height*((double)30/100);
 	}
 	
+	private Double paginBoxHeight(double height) {
+		return height*((double)70/100);
+	}
 	
 	public ArticalDataModel getDataModel() {
 		return dataModel;

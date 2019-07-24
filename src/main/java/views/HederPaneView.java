@@ -50,11 +50,11 @@ public class HederPaneView extends VBox {
 
 		wrepBox.getChildren().addAll(groupBoxScroll);
 
-		Line line = new Line(10, 0, 1000, 0);
-		line.setId("line");
+//		Line line = new Line(10, 0, 1000, 0);
+//		line.setId("line");
 		
 		this.setId("heder-pane");
-		this.getChildren().addAll(wrepBox,line);
+		this.getChildren().addAll(wrepBox);
 		this.getStylesheets().add("css/heder-pane.css");
 	
 	}

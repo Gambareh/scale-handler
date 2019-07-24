@@ -41,13 +41,14 @@ public class Main extends Application{
 		RightPaneView rightPaneView = new RightPaneView(primaryScreenBounds);
 	
 		
-		CenterPaneController centerPaneController = new CenterPaneController(
+		 new CenterPaneController(
 				leftPaneView,
 				hederPaneView,
 				centerPaneView,
-				rightPaneView,
 				dataModel,
 				primaryScreenBounds);
+		 
+		 new RightPaneController(rightPaneView, primaryScreenBounds);
 		
 		
 		root.setTop(hederPaneView);
@@ -60,7 +61,7 @@ public class Main extends Application{
 		Scene scene = new Scene(root,1024,780);
 		scene.getStylesheets().add("css/application.css");
 		primStage.setScene(scene);
-		primStage.setFullScreen(true);
+//		primStage.setFullScreen(true);
 		primStage.initStyle(StageStyle.UNDECORATED);
 		primStage.show();
 		

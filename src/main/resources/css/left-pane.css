@@ -1,8 +1,6 @@
 #left-pane-body{
 	-fx-padding:10px;
 	-fx-spacing:10px;
-	-fx-border-style:solid;
-	
 }
 
 .label{
@@ -13,7 +11,6 @@
 	-fx-font-size:14px;
 	-fx-text-fill:black;
 	-fx-font-weight:bold;
-	-fx-background-color:#fff;
 	-fx-alignment:center;
 	-fx-padding:0px,10px,0px,0px;
 }
@@ -47,7 +44,6 @@
 	-fx-font-size:14px;
 	-fx-text-fill:black;
 	-fx-font-weight:bold;
-	-fx-background-color:#fff;
 	-fx-alignment:center;
 	-fx-spacing:10px;
 
