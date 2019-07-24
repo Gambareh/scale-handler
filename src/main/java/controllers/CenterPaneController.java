@@ -5,6 +5,7 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
@@ -74,20 +75,34 @@ public class CenterPaneController  {
 		
 		scrollPane.getChildren().addAll(pane);
 		
-		
+		//right pane view
+		Button exitBtn = rightPaneView.getExitBtn();
+		exitBtn.addEventHandler(ActionEvent.ACTION,  exitBtnEvent());
 		
 		
 	}
+	
 	private EventHandler<ActionEvent> groupEvent(){
-	EventHandler<ActionEvent> groupEvent = new EventHandler<ActionEvent>() {
+		EventHandler<ActionEvent> groupEvent = new EventHandler<ActionEvent>() {
+	
+			@Override
+			public void handle(ActionEvent event) {
+				System.out.println("Hello group");
+			}
+		};
+		return groupEvent;
+		};
+	
+	private EventHandler<ActionEvent> exitBtnEvent(){
+		EventHandler<ActionEvent> groupEvent = new EventHandler<ActionEvent>() {
 
-		@Override
-		public void handle(ActionEvent event) {
-			System.out.println("Hello group");
-		}
-	};
-	return groupEvent;
-	};
+			@Override
+			public void handle(ActionEvent event) {
+				System.exit(0);
+			}
+		};
+		return groupEvent;
+		};
 	
 	
 	/*

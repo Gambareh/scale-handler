@@ -38,7 +38,7 @@ public class Main extends Application{
 		LeftPaneView leftPaneView = new LeftPaneView(primaryScreenBounds);
 		HederPaneView hederPaneView = new HederPaneView(primaryScreenBounds);
 		CenterPaneView centerPaneView = new CenterPaneView();
-		RightPaneView rightPaneView = new RightPaneView();
+		RightPaneView rightPaneView = new RightPaneView(primaryScreenBounds);
 	
 		
 		CenterPaneController centerPaneController = new CenterPaneController(
